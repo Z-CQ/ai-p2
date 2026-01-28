@@ -1,0 +1,324 @@
+Below are JSON formatted files for Portal 2 levels.
+
+```
+{
+    "name": "example1",
+    "level": [
+        ["W","EN","W","W"],
+        ["W",null,null,"PW","W","W"],
+        ["W",null,null,null,null,"W"],
+        ["OR1","FB2",null,null,null,"EX"],
+        ["W",null,null,null,"FB1","W"],
+        ["W","FZ1","W","W","W","W"],
+        ["W",null,null,null,"W"],
+        ["W",null,"CD1","PB1","W"],
+        ["W",null,null,null,"W"],
+        ["W","PW","OR2","W","W"]
+    ],
+    "entities": {
+        "FB2": { "conn": ["FZ1"] },
+        "FB1": { "conn": ["EX"] },
+        "PB1": { "conn": ["CD1"], "facing": "west" }
+    },
+    "steps": [
+        "Place a portal on PW next to EN",
+        "Stand on FB2, disabling FZ1 and allowing the player to place a portal on PW next to CD1 (remember: physics objects and portals cannot travel through FZ objects).",
+        "Activate PB1, dropping a cube from CD1",
+        "Walk back through the portal and place the cube on FB1, opening EX"
+    ]
+}
+```
+
+```
+{
+    "name": "example2",
+    "level": [
+        ["W", "W", "EN", "W", "W"],
+        ["W", null, null, null, "W"],
+        ["OR1", null, "FB1", null, "W"],
+        ["W", null, null, null, "W"],
+        ["W", "PW", "FZ1", "W", "W", "W", "W"],
+        ["W", "T1", null, null, null, null, null, "W"],
+        ["OR2", null, "CD1", null, null, "FB2", null, "PW"],
+        ["W", null, "PB1", null, null, null, null, "W"],
+        ["W", "W", "W", "W", "W", "EX", "W", "W"]
+    ],
+    "entities": {
+        "FB1": {
+            "conn": ["EX"]
+        },
+        "FB2": {
+            "conn": ["FZ1"]
+        },
+        "T1": {
+            "facing": "east"
+        },
+        "PB1": {
+            "conn": ["CD1"],
+            "facing": "north"
+        }
+    },
+    "steps": [
+        "Walk through the fizzler and destroy the turret.",
+        "Press PB1, dropping a cube from CD1",
+        "Place the cube on FB2, disabling the fizzler",
+        "Place a portal on both sides of the only PW",
+        "Retrieve the cube from FB2 and carry it through the portal (since FZ1 is now back online)",
+        "Set the cube on FB1 and walk to EX, which is now open"
+    ]
+}
+```
+
+```
+{
+    "name": "example3",
+    "level": [
+        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "EN", "W", "W", "W", "W", "W", "PW"],
+        ["W", null, null, null, "W", null, null, null, "W", null, null, null, null, null, "W", null, null, null, "PW"],
+        ["OR1", null, "FB1", null, "FZ1", null, null, null, "FZ2", "FB2", null, "PW", null, null, "FZ3", null, "FB3", null, "W"],
+        ["PW", null, null, null, "W", null, null, null, "W", null, null, null, null, null, "W", null, null, null, "W"],
+        ["W", "PW", "W", "W", "W", null, "CD1", null, "W", null, null, "T1", null, null, "W", null, "CD2", null, "W"],
+        ["W", "W", "W", "W", "W", null, "PB1", null, "W", null, "FB4", null, "FB5", null, "W", null, "PB2", null, "W"],
+        ["W", "W", "W", "W", "W", "W", "OR2", "W", "W", null, null, null, null, null, "W", "W", "OR3", "W", "W"],
+        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "OR4", "EX", "W", "W", "W", "W", "W", "W", "W"]
+    ],
+    "entities": {
+        "FB1": {
+            "conn": ["FZ2"]
+        },
+        "FB2": {
+            "conn": ["FZ1"]
+        },
+        "FB3": {
+            "conn": ["FZ3"]
+        },
+        "T1": {
+            "facing": "south"
+        },
+        "FB4": {
+            "conn": ["EX"]
+        },
+        "FB5": {
+            "conn": ["EX"]
+        },
+        "PB1": {
+            "conn": ["CD1"],
+            "facing": "north"
+        },
+        "PB2": {
+            "conn": ["CD2"],
+            "facing": "north"
+        }
+    },
+    "steps": [
+        "Destroy T1 guarding both floor buttons and the exit",
+        "Walk through FZ3 and triger PB2, dropping a cube from CD2",
+        "Stand on FB3 to disable FZ3, place a portal on the PW next to FB3 and a portal on the PW next to EN",
+        "Take the cube through the portal to the main room, and place it on FB2 to disable FZ1",
+        "Walk through the active FZ2 and trigger PB1 to drop a cube from CD1",
+        "Walk the cube through the inactive FZ1 and put it on FB1 to disable FZ2",
+        "Shoot a portal on the PW in front of EN and a portal on the PW next to FB1",
+        "Take the cube off of FB1 and bring it through the portal",
+        "Now that both cubes are in the main room, set them both on FB4 and FB5 to open EX"
+    ]
+}
+```
+
+```
+{
+    "name": "example4",
+    "level": [
+        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "EN","W"],
+        ["W", "W", "W", "W", "W", "W", "W", "W", "W", null, null, null, "W", "W", "W", "W"],
+        ["W", null, null, null, "FZ1", null, null, null, "FZ2", null, null, null, "FZ3", null, null, null, "W"],
+        ["OR1", "PB1", "CD1", null, "FZ1", null, "FB1", "T1", "FZ2", null, "FB2", null, "FZ3", "T2", "CD2", "PB2", "OR3"],
+        ["W", null, null, null, "FZ1", null, null, null, "FZ2", null, null, null, "FZ3", null, null, null, "W"],
+        ["W", "W", "PW", "W", "W", "W", "OR2", "W", "W", null, "PW", null, "W", "W", "PW", "W"],
+        ["W", "W", "W", "W", "W", "W", "W", "W", null, null, "T3", null, null, "W"],
+        ["W", "W", "W", "W", "W", "W", "W", "OR4", null, "FB3", null, "FB4", null ,"W"],
+        ["W", "W", "W", "W", "W", "W", "W", "W", null, null, null, null, null, "W"],
+        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "EX", "W", "W", "W"]
+    ],
+    "entities": {
+        "PB1": {
+            "conn": ["CD1"],
+            "facing": "east"
+        },
+        "FB1": {
+            "conn": ["FZ1"]
+        },
+        "T1": {
+            "facing": "west"
+        },
+        "FB2": {
+            "conn": ["FZ2", "FZ3"]
+        },
+        "T2": {
+            "facing": "east"
+        },
+        "PB2": {
+            "conn": ["CD2"],
+            "facing": "west"
+        },
+        "T3": {
+            "facing": "south"
+        },
+        "FB3": {
+            "conn": ["EX"]
+        },
+        "FB4": {
+            "conn": ["EX"]
+        }
+    },
+    "steps": [
+        "Walk through FZ3 and destroy T2, which is guarding CD2",
+        "Return to the main room and stand on FB2, disabling both FZ2 and FZ3",
+        "Fire a portal through FZ3 onto the PW next to CD2",
+        "Fire a second portal on the PW in front of FB2",
+        "Walk through the two portals and trigger PB2 to drop a cube from CD2",
+        "Walk back through the portals with the cube since FZ3 will be reactivated",
+        "Set the cube onto FB2 to turn the fizzlers back off",
+        "Destroy T1 guarding the FB1",
+        "Stand on FB1 to disable FZ1",
+        "Fire whichever portal was fired in the first cube room onto the PW next to CD1",
+        "Walk off FB1 to reactivate FZ1 and return to the main room where your portal should stil be on PW",
+        "Walk through the portal to get access to CD1 and PB1. Trigger PB1 for the cube",
+        "Take the cube back to the main room",
+        "Destroy T3 guarding FB3 and FB4",
+        "Set both cubes on FB3 and FB4 to open the exit door"
+    ]
+}
+```
+
+```
+{
+    "name": "example5",
+    "level": [
+        ["W", "W", "EN", "W", "W"],
+        ["W", null, null, null, "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+        ["W", null, null, null, "FZ1", null, null, null, null, "FZ2", null, null, null, "W"],
+        ["PW", null, null, null, "FZ1", null, "FB1", null, null, "FZ2", null, "FB2", null, "OR2"],
+        ["OR1", null, null, null, "FZ1", null, null, null, null, "FZ2", null, null, null, "PW"],
+        ["W", null, null, null, "FZ1", null, "CD1", null, "W", "W", "W", "W", "W"],
+        ["W", null, "FB3", null, "FZ1", null, "PB1", null, "PW"],
+        ["W", null, null, null, "W", "W", "W", "PW"],
+        ["W", "W", "EX", "W"]
+    ],
+    "entities": {
+        "FB1": {
+            "conn": ["FZ2"]
+        },
+        "FB2": {
+            "conn": ["FZ1"]
+        },
+        "PB1": {
+            "facing": "north",
+            "conn": ["CD1"]
+        },
+        "FB3": {
+            "conn": ["EX"]
+        }
+    },
+    "steps": [
+        "Walk through FZ1 toward PB1 and press it, dropping a cube from CD1",
+        "Set the cube from CD1 onto FB1 and walk through the now disabled FZ2",
+        "Stand on FB2 to disable FZ1, allowing you to fire a portal through it onto the PW between EN and EX",
+        "Walk off FB2, reactivating FZ1, and approach FB1, where the cube is still sitting",
+        "Place a portal on either PW next to CD1 and take the cube from the button, reactivating FZ2",
+        "Walk through the portal next to CD1 to get past FZ1 with the cube",
+        "Set the cube on FB3 to open the exit door."
+    ]
+}
+```
+
+```
+{
+    "name": "testmap",
+    "level": [
+        ["W", "W", "OR1", "W", "W"],
+        ["W", null, null, null, "W"],
+        ["W", null, "CD2", "PB2", "W"],
+        ["W", null, null, null, "W"],
+        ["W", "W", "FZ2", "W", "PW"],
+        ["W", null, null, null, null, "W"],
+        ["EN", null, null, "FB1", null, "W"],
+        ["W", "FB3", null, null, null, "EX"],
+        ["OR2", null, null, "FB2", null, "PW"],
+        ["PW", null, null, null, null, "PW"],
+        ["W", "W", "FZ1", "W", "W"],
+        ["W", null, "T1", null, "W"],
+        ["OR3", null, "CD1", "PB1", "W"],
+        ["W", null, null, null, "W"],
+        ["W", "W", "PW", "PW", "W"]
+    ],
+    "entities": {
+        "FB1": {
+            "conn": ["EX"]
+        },
+        "FB2": {
+            "conn": ["EX"]
+        },
+        "PB1": {
+            "conn": ["CD1"],
+            "facing": "west"
+        },
+        "FB3": {
+            "conn": ["FZ1"]
+        },
+        "PB2": {
+            "conn": ["CD2", "FZ2"],
+            "delay": 5,
+            "facing": "west"
+        },
+        "T1": {
+            "facing": "south"
+        }
+    },
+    "steps": [
+        "Destroy the turret in front of FZ1 which is guarding CD1",
+        "Stand on FB3 to disable FZ1, allowing you to shoot a portal onto PW next to CD1",
+        "Walk through the two portals, trigger PB1 to drop a cube from CD1, and return it to the main room",
+        "Approach PB2 and press it, which will drop a cube and temporarily disable FZ2",
+        "Walk the cube through the disabled FZ2 before it reactivates",
+        "Place both cubes on FB1 and FB2, opening the door"
+    ]
+}
+```
+
+Generate ONE Portal 2 level as JSON matching the schema. Output ONLY JSON. Do not include a "steps" array - they are included in the examples for you to understand how the test plays out.
+
+Grid tokens:
+- EN / EX: entrance and exit. Exactly one of each. Must be on the outer edge. EX should be accessible from EN - no walls separating the two.
+- OR#: observation room. Must be on the outer edge, not in corners.
+- W: solid wall, non-portalable
+- PW: solid wall, portalable
+- null: walkable floor (floor/ceiling generated). null must be JSON null (not "null").
+
+Entities (only these):
+- FB#: floor button. Properties: conn (required). Only powered while something is on it.
+- PB#: pedestal button. Properties: conn (required), facing (required), delay (optional int seconds).
+- CD#: cube dropper. No properties.
+- CB#: loose cube. No properties.
+- T#: turret. Properties: facing (required).
+- FZ#: fizzler. No properties. When active, entities like cubes cannot pass without being destroyed, and if the player passes, their portals are cleared.
+
+Connections:
+- conn recipients can only be: EX, FZ#, CD#.
+- Convention: FB should NOT trigger CD (prefer PB for CD).
+
+Placement rules:
+- EN, EX, and OR tiles must be “set into a wall”: they must have exactly ONE orthogonally-adjacent null tile (N/S/E/W), and must not be placed in concave corners (“bending-in” corners).
+- EX must be reachable from EN.
+
+Design:
+- Valve-style layout: clean rooms, readable routes, no maze-like structure, no random pillar spam.
+- W/PW should mainly define boundaries/shape, not act as arbitrary interior obstacles.
+- Place Observation rooms sparingly to provide even lighting to all parts of the level.
+
+Include `steps` describing a valid solution.
+Level name must be snake_case.
+
+entities must include an entry for every entity token that appears in level (FB#, PB#, T#, CD#, CB#, FZ#). For CD#/CB#/FZ# use {}; for FB#/PB#/T# include their required properties.
+
+This is the user's request. The more vague, the more creative control you may have:
+{user_request}
