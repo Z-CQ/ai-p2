@@ -217,7 +217,7 @@ entity
     "targetname" "end_trigger"
     "origin" "{1}"
     connections {{ 
-        "OnTrigger" "pti_ents\x1binstance:@relay_pti_level_end;Trigger\x1b0\x1b-1" 
+        "OnTrigger" "pti_ents\x1binstance:@relay_pti_level_end;Trigger\x1b0\x1b-1\x1b-1"
     }} 
     {2} 
 }}
@@ -477,5 +477,6 @@ entity
         f.write(vmf)
 
         f.close()
+
 
         return os.path.join(maps_dir, "{0}.vmf".format(map_name)), maps_dir, map_name
