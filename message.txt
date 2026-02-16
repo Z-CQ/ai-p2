@@ -315,10 +315,10 @@ Design:
 - W/PW should mainly define boundaries/shape, not act as arbitrary interior obstacles.
 - Place Observation rooms sparingly to provide even lighting to all parts of the level.
 
-Include `steps` describing a valid solution.
 Level name must be snake_case.
 
 entities must include an entry for every entity token that appears in level (FB#, PB#, T#, CD#, CB#, FZ#). For CD#/CB#/FZ# use {}; for FB#/PB#/T# include their required properties.
 
 This is the user's request. The more vague, the more creative control you may have:
+
 {user_request}
